@@ -1,5 +1,5 @@
 
-const initState = {
+const initState = { name :"alaa"
     
 }
 

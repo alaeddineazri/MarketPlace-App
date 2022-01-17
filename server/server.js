@@ -21,6 +21,8 @@ mongoose
 // middleware 
 app.use(cors())
 app.use(morgan('dev'))
+app.use(express.json())
+
 
 //Auto loading routes
 

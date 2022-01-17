@@ -1,9 +1,9 @@
 const express =require('express')
-const { message } = require('../controllers/auth')
+const {register} = require('../controllers/auth')
 const router=express.Router()
 
 
-router.get('/login', message)
+router.post('/register',register)
 
 // router.post('/register',validationCheck,userController.register)
 // router.post('/login',userController.login)

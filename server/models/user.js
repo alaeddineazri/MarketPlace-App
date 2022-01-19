@@ -32,7 +32,8 @@ const userSchema= new Schema ({
 
 
 userSchema.pre("save",function(next){
-    let user=this
+    let user=this                       //this ==> user created
+    console.log("this user",user)
     if (user.isModified("password")) {
         return bcrypt.hash(user.password,10,function(err,hash){
             if (err){
@@ -49,5 +50,17 @@ userSchema.pre("save",function(next){
     }
 })
 
+
+userSchema.methods.comparePassword =function (password,next){
+    bcrypt.compare(password ,this.password,function(error,match){
+        if (error) {
+            console.log("compare password error",error)
+            return next(error,false) // false
+        }
+        //if no error we get null
+        console.log("match password ",match)
+        return  next(null,match) // true
+    })
+}
 
 module.exports = mongoose.model('user', userSchema)

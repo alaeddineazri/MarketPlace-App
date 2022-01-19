@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import RegisterForm from '../components/RegisterForm'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import {register} from '../redux/actions/register';
+
 
 
 
@@ -14,18 +16,17 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-
+    
 
     async function handelSubmit(e) {
         e.preventDefault()
         try {
-            const res = await axios.post('http://localhost:5050/api/register', {
+            const res = await register ({
                 name,
                 email,
                 password
 
             })
-            console.log("resssssss", res)
             toast.success("Register success")
             navigate("/login")
 
@@ -35,12 +36,11 @@ const Register = () => {
 
 
 
-
+            
 
         }
 
     }
-
 
 
     return (

@@ -1,16 +1,7 @@
-const RegisterForm = ({handelSubmit,name,setName,email,setEmail,password,setPassword}) => {
+const LoginForm = ({handelSubmit,email,setEmail,password,setPassword}) => {
     return (
         <form onSubmit={handelSubmit} className="mt-3">
             <div className="form-group">
-                <label className="label-group" >Name</label>
-                <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Enter name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-
                 <label className="label-group" >Email</label>
                 <input
                     className="form-control"
@@ -28,9 +19,9 @@ const RegisterForm = ({handelSubmit,name,setName,email,setEmail,password,setPass
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <button disabled={!name||!email||!password} type="submit" className="btn btn-primary" >Submit</button>
+            <button disabled={!email||!password}  type="submit" className="btn btn-primary" >Login</button>
         </form>
     )
 }
 
-export default RegisterForm
+export default LoginForm

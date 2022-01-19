@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import LoginForm from '../components/LoginForm'
+import { toast } from 'react-toastify'
+import {login} from '../redux/actions/auth'
+
 
 const Login = () => {
     let navigate = useNavigate();
@@ -8,7 +11,24 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-
+    const handelSubmit =async (e)=>{
+        e.preventDefault()
+        console.log("send login data " ,{password , email})
+        try {
+            const res =await login({
+                password ,
+                email
+            })
+            if (res.data) {
+                console.log("data " ,res)
+            }
+            console.log("res.data",res.data)
+        } catch (error) {
+            if (error.response.status===400) {
+                toast.error(error.response.data)
+            }
+        }
+    }
 
 
     return (
@@ -18,7 +38,7 @@ const Login = () => {
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <LoginForm
-                        // handelSubmit={handelSubmit}
+                        handelSubmit={handelSubmit}
                         email={email}
                         setEmail={setEmail}
                         password={password}

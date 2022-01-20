@@ -21,5 +21,20 @@ const register = async (req,res)=>{
 }
 
 
+const login= async(req,res)=>{
+    const {email,password}=req.body
+    try {
+        let user=await userSchema.findOne({email}).exec()
+        if(!user) res.status(400).send("user with that email not found ")
+        user.comparePassword(password,(error,mathc)=>{
+            if(!match||error) return res.status(400).send("wrong password ")
+            console.log("jwt plz")
+        })
+    } catch (error) {
+        console.log("login error",error)
+        res.status(400).send("login failed")
+    }
+}
 
-module.exports = {  register}
+
+module.exports = {register , login}

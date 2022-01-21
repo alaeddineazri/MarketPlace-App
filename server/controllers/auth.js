@@ -30,6 +30,7 @@ const login = async (req, res) => {
         if (!user) res.status(400).send("user with that email not found ")
         user.comparePassword(password, (error, match) => {
             if (!match || error) return res.status(400).send("wrong password ")
+            // generate JWT
             const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '1w' })
             res.json({ token, user :{
                 _id: user._id,

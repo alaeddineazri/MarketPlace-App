@@ -1,7 +1,12 @@
 
-const initState = {
+let initState = {
 }
 
+if (window.localStorage.getItem("auth")) {
+    initState=JSON.parse(window.localStorage.getItem("auth"))
+} else{
+    initState =null
+}
 
 
 const autReducer = (state = initState, { type, payload }) => {

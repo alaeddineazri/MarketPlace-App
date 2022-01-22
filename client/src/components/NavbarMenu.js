@@ -37,7 +37,7 @@ const NavbarMenu = () => {
                     <Nav className="me-auto">
                         <Link className="px-5" to="/">Home</Link>
 
-                        {auth.user ?<a className="px-5" onClick={logout} >LOGOUT</a> :<>
+                        {auth && auth.user ?<a className="px-5" onClick={logout} >LOGOUT</a> :<>
                                 <Link className="px-5" to="login">Login</Link>
                                 <Link className="px-5" to="register">Register</Link>
                             </>

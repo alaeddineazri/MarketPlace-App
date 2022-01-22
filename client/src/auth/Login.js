@@ -31,7 +31,7 @@ const Login = () => {
                     type:"LOGIN",
                     payload:res.data,
                 })
-                navigate("/")
+                navigate("/dashboard")
             }
             console.log("res.data", res.data)
         } catch (error) {

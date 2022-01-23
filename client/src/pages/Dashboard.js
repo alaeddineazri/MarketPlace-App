@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import ConnectNav from '../components/ConnectNav'
 import DashboardNav from '../components/DashboardNav'
 
 
@@ -9,6 +10,7 @@ const Dashboard = () => {
 
     return (
         <div>
+            <ConnectNav />
             <DashboardNav />
         </div>
     )

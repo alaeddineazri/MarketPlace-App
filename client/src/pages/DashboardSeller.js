@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import DashboardNav from '../components/DashboardNav'
 
 
-const Dashboard = () => {
+const DashboardSeller = () => {
 
     const {auth} = useSelector(state => ({...state}))
 
@@ -14,4 +14,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default DashboardSeller

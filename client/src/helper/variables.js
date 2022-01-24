@@ -1,0 +1,5 @@
+
+
+const Strip_Key ="pk_test_51KLSUrFzsliq4IrrPrdKYAxU89Gphm0ZBUw72Gkkps0GB10W2kbia7nS6aXk79Iwhwjejri3oluCC2jEzlArZOSm00Y92LBRoa"
+
+export default StripVar

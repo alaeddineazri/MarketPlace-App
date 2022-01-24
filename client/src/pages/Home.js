@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux'
 
 const Home = () => {
 
-    const {user} = useSelector(state => ({...state}))
+    const {auth} = useSelector(state => ({...state}))
 
     return (
         <div>
-            Home page {JSON.stringify(user)}
+            Home page {JSON.stringify(auth)}
+            
         </div>
     )
 }

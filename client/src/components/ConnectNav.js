@@ -14,6 +14,15 @@ function ConnectNav() {
             <Card>
                 <Meta  avatar={<Avatar>{user.name[0].toUpperCase()} </Avatar>} title={user.name} description={`Joined ${moment(user.createdAt).fromNow()}`}/>
             </Card>
+            {auth &&
+            auth.user &&
+            auth.user.stripe_seller &&
+            auth.user.stripe_seller.charge_enabled &&
+            (<>
+                <div>Pending balance</div>
+                <div>Payout settings</div>
+            </>)
+            }
         </div>
 
 )}

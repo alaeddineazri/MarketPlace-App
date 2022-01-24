@@ -8,7 +8,7 @@ const DashboardNav = () => {
     return (
         
             <ul className="nav nav-tabs">
-                <li className="nav-items">
+                <li className="bg-secondary nav-items">
                     <Link className={`nav-link ${active==="/dashboard" && "active"}` } to="/dashboard">YOUR BOOKINGS</Link>
                 </li>
                 <li className="nav-items">

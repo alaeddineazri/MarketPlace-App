@@ -31,13 +31,13 @@ const NavbarMenu = () => {
     return (
         <Navbar bg="light" expand="sm">
             <Container>
-                <Navbar.Brand href="#home">Logo</Navbar.Brand>
+                <Navbar.Brand >Logo</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Link className="px-5" to="/">Home</Link>
 
-                        {auth && auth.user ?<a className="px-5" onClick={logout} >LOGOUT</a> :<>
+                        {auth && auth.user ?<> <Link className="px-5" to="dashboard">Dashboard</Link> <a className="px-5" onClick={logout} >LOGOUT</a> </>:<>
                                 <Link className="px-5" to="login">Login</Link>
                                 <Link className="px-5" to="register">Register</Link>
                             </>

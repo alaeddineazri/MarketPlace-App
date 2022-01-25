@@ -26,7 +26,7 @@ app.use(express.json())
 
 //Auto loading routes
 
-fs.readdirSync('./routes').map((r) => app.use("/api", require(`./routes/${r}`)))
+fs.readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
 
 

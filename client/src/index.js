@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'antd/dist/antd.css';
 import {Provider } from 'react-redux'
-import store from './redux/store/store';
+import store from './redux/store/store'
+import 'antd/dist/antd.css';
+
 
 
 
